@@ -2,8 +2,8 @@ package compostos;
 
 public class QuackCounter implements Quackable {
 	
-	private Quackable duck;
-	public static Long numberOfQuacks;
+	Quackable duck;
+	static int numberOfQuacks;
 	
 	public QuackCounter(Quackable duck){
 		this.duck = duck;
@@ -11,8 +11,9 @@ public class QuackCounter implements Quackable {
 	
 	@Override
 	public void quack() {
-		this.quack();
-		QuackCounter.numberOfQuacks++;
+		System.out.println("++");
+		this.duck.quack();		
+		numberOfQuacks++;
 	}
 
 	/**
@@ -27,5 +28,9 @@ public class QuackCounter implements Quackable {
 	 */
 	public Quackable getDuck() {
 		return duck;
+	}
+	
+	public static int getQuacks(){
+		return numberOfQuacks;
 	}
 }
